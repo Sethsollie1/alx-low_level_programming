@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 int _putchar(char c);
