@@ -1,30 +1,16 @@
 #include "lists.h"
 
 /**
- * dlistint_len - returns the number of nodes in a linked
- *		list
- * @h: the head of the list
- * Return: the length of the linked list
+ * dlistint_len - count the number of nodes in the linked list
+ * @h: pointer to the beginning of a linked list
+ * Return: number of nodes
  */
-size_t dlistint_len(const node *h)
+
+size_t dlistint_len(const dlistint_t *h)
 {
-	const node *head;
-	size_t length;
+	size_t nodes;
 
-	head = h;
-
-	if (!head)
-		return (0);
-
-	/* get the head of the list */
-	while (head->prev)
-		head = head->prev;
-	/* go through the list now from the head */
-	length = 1;
-	while (head->next)
-	{
-		head = head->next;
-		length++;
-	}
-	return (length);
+	for (nodes = 0; h != NULL; nodes++)
+		h = h->next;
+	return (nodes);
 }
